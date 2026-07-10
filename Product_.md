@@ -29,7 +29,7 @@ PyBe is built to fix this at the root.
 
 ## What PyBe Is
 
-PyBe is not a Python learning platform.
+PyBe is not just a Python learning platform.
 
 PyBe is a system that does four things simultaneously:
 
