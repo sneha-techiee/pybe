@@ -1,0 +1,164 @@
+# PyBe
+## A Cognitive Learning System for Computational Thinking
+*VLED Lab, IIT Ropar*
+**MENTOR - Dr. Prakash Hegade**
+
+---
+
+> Every learner already knows how to think computationally.
+> They make decisions. They repeat tasks. They group related things. They name patterns.
+> PyBe does not install new thinking.
+> It makes existing thinking precise enough for a computer to understand.
+> Python is simply the notation we use to achieve that precision.
+
+---
+
+## The Problem
+
+Every existing platform that teaches programming makes the same mistake.
+
+They treat learning as content delivery. Syntax is explained. Examples are shown. Exercises are completed. The learner reproduces what they have seen — and forgets it within weeks.
+
+The deeper problem: these platforms measure what the learner *knows*. None of them measure how the learner *thinks*. They have no model of cognitive progression — only content progression.
+
+The result is a learner who can write a loop but cannot tell you when they need one, or why it exists, or what thinking it replaces.
+
+PyBe is built to fix this at the root.
+
+---
+
+## What PyBe Is
+
+PyBe is not a Python learning platform.
+
+PyBe is a system that does four things simultaneously:
+
+- **Observes** — reads what the learner writes in natural language and maps how they are thinking
+- **Measures** — quantifies the structure of their reasoning and locates them on a cognitive trajectory
+- **Challenges** — generates a scenario of exactly the right kind to push their thinking forward
+- **Remembers** — tracks every belief, every misconception, every breakthrough, across every session
+
+Python appears at the end of this process — as the precise written form of thinking the learner already did in plain language. Not as the starting point.
+
+---
+
+## The Core Idea — Structuredness as a Computational Parameter
+
+Problems are not just easy or hard. They differ in *how structured they are* — how many valid solutions exist, how clearly the goal is stated, how much information is missing, how many constraints compete.
+
+A beginner does not need simpler problems. They need *more structured* problems — where the path is clear and one answer is correct. As thinking matures, the learner can handle increasing ambiguity, competing constraints, and problems with no single right answer.
+
+This is the axis PyBe uses. Not difficulty. Structuredness.
+
+Every scenario in PyBe is represented as a point in structuredness space, defined by four measurable dimensions:
+
+```
+S = f( ambiguity, solution_space, goal_clarity, competing_constraints )
+
+S ∈ [0, 1]
+0 → fully structured — one answer, explicit goal, no ambiguity
+1 → fully ill-structured — infinite answers, implicit goal, maximal tension
+```
+
+The scenario generator does not think:
+*"Give this learner a beginner loop problem."*
+
+It thinks:
+*"Generate a scenario at S = 0.18 for a learner whose current cognitive boundary sits at S = 0.22."*
+
+This is the difference between a fixed curriculum and an adaptive engine.
+
+Learners do not move through levels. They move through structuredness space along a trajectory computed from their own cognitive state — at their own pace, in their own direction.
+
+---
+
+## The Belief Monitoring System
+
+This is the original research contribution!
+
+Every session, as the learner reasons through a scenario in natural language, the system extracts *belief statements* — explicit or implied claims about how Python works:
+
+- *"I think a variable can only hold one value"* — Session 3
+- *"A list holds many things"* — Session 6
+
+These are stored per learner, tagged to concepts, timestamped.
+
+After every session, a contradiction detector scans the full belief graph. In the example above:
+
+> A variable holds one value. A list holds many values. But `x = [1, 2, 3]` is a variable containing a list. The learner's two beliefs, held together, are logically incompatible — and they do not know it.
+
+When a contradiction is detected, PyBe does not correct the learner. It engineers a scenario where the learner *walks into their own contradiction* and must reason their way out. The system only asks questions. The resolution is always the learner's own.
+
+This is what real conceptual change looks like. Not correction from outside — collision from within.
+
+The system also detects *overgeneralization* — when a correctly-learned concept is applied outside its valid boundary:
+
+- `=` learned as assignment → `if x = 5:` written in a condition
+- `range()` learned for counting → `range("hello")` attempted
+- Functions learned as return-producing → `print()` expected to return its output
+
+Together, contradiction detection and overgeneralization detection form a complete belief monitoring system. No existing learning platform does either.
+
+---
+
+## What Pybe Builds
+
+**Track 1 — The AI Mentor**
+Replaces the current rule-based, keyword-matching engine with a real LLM that reads what the learner actually wrote. Generates Python code derived from the learner's specific reasoning — not selected from templates. Every explanation is grounded in foundational Python literature through a RAG pipeline (ChromaDB). Every concept arrives with its origin story: the problem that made it necessary, not just the syntax that defines it.
+
+**Track 2 — Belief Monitoring + Contradiction Engine**
+Extracts belief statements from natural language every session. Maintains a persistent belief graph per learner. Detects contradictions across sessions and engineers targeted resolution scenarios. Detects overgeneralization and surfaces boundary violations. The original research contribution of this project.
+
+**Track 3 — Structuredness Engine + Assessment**
+Implements the four-dimensional structuredness scoring system with a hybrid pipeline: human-scored calibration corpus as ground truth, LLM scoring validated against it, behavioral signals correcting scores at runtime. The assessment tests thinking — not knowledge. Every test scenario is uniquely generated. Mid-session, one constraint changes without warning. The assessment is designed around the learner's own misconception profile. The output is not a score — it is a thinking fingerprint across five cognitive dimensions.
+
+**Track 4 — Interface + Documentation**
+Builds the learner-facing experience: an abstraction ladder showing exactly where the learner sits between concrete experience and Python fluency, a belief evolution dashboard showing how their thinking has changed over time, an episodic memory timeline anchoring every breakthrough to the scenario where it happened. Complete documentation — every feature explained, every design decision justified, every research principle cited.
+
+---
+
+## The Narrative Layer
+
+Scenarios in PyBe are not exercises. They are episodes in an ongoing story the learner inhabits.
+
+The learner does not see:
+*"Exercise 4: Write a loop to process a list."*
+
+They see:
+*"There are 500 students waiting for their results. Are you really going to check each one by hand?"*
+
+Every scenario is built around a situation the learner genuinely recognizes — a shopkeeper, a bus conductor, a student managing expenses. The concept the learner needs does not exist yet in their vocabulary. They feel the need for it before they know its name.
+
+Progression is described in terms of thinking, not syntax:
+
+| Stage | What the Learner Can Now Do |
+|---|---------------------------------|
+| 1 | Name things precisely |
+| 2 | Repeat actions without repetition |
+| 3 | Make decisions from context |
+| 4 | Create reusable rules |
+| 5 | Choose the right container |
+| 6 | Find why something is broken |
+| 7 | Design systems with no single right answer |
+| 8 | Navigate competing valid goals |
+
+Only after completing a stage does the learner realize: *"I have basically learned variables"* — or loops, or functions, or classes. The concept arrives after the thinking. Never before.
+
+---
+
+## Open Questions for Discussion
+
+Three genuine research questions this project will generate data to answer:
+
+1. Can structuredness be reliably measured from natural language scenario descriptions — and does measured structuredness predict learner cognitive load?
+
+2. Does contradiction-targeted scenario generation resolve misconceptions faster than standard instruction — and is that effect stronger at higher structuredness levels?
+
+3. Does progression through structuredness space produce better transfer performance than difficulty-based progression — specifically on problems the learner has never seen?
+
+These are not aspirational. They are answerable with the data Pybe will generate.
+
+---
+
+*PyBe— VLED Lab, IIT Ropar | June 2026*
+*Team Lead: Sneha (sneha-techiee)*
