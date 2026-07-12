@@ -150,14 +150,16 @@ Only after completing a stage does the learner realize: *"I have basically learn
 ---
 ## PyBe Features Specification
 
-author: Muskan Kumari
+Author: Muskan Kumari
 
-date:july 2026
+Date:july 2026
 
 ---
 
 > ### Features and Ideation
 > The modules specified below—the **"What-If" Simulator**, **Interactive Easter Eggs** and **PySnakes & Ladders**— gamified, conceptualized and as a core retention mechanism to maximize user engagement and retention in the PyBe prototype.
+
+---
 
 ##  1. Feature: "What-If" Scenario Simulator
 
@@ -200,6 +202,40 @@ This creates an "Aha!" moment, keeps the app highly engaging, and encourages use
 ### How it works under the hood:
 Before the user's text is sent to the AI engine, a tiny layer of code checks if the prompt matches any of these fun keywords. If it matches, it skips the AI generation entirely and instantly triggers the custom response or animation, keeping the system extremely fast and cost-free.
 
+---
+
+##  3. Feature: PySnakes & Ladders (Gamified Learning Board)
+
+### What is it? (In Simple Words)
+This feature turns Python learning into a classic 100-cell Board Game (Snake & Ladders). Instead of moving through boring text chapters, the user rolls a digital dice, moves across the board, and unlocks Python concepts. 
+
+The twist? The **ladders** are "Pythonic Discoveries" (writing clean code), and the **snakes** are notorious "Python Runtime Errors" that bite you and pull you down if you can't debug them!
+
+### The Gameplay Mechanics
+1. **Roll the Dice:** The user clicks a "Roll" button. A random number (1-6) moves their avatar forward on a beautiful HTML5/CSS grid board.
+2. **Landing on a Neutral Cell:** A pop-up asks a quick Python MCQ (Multiple Choice Question) based on their current level. Answer correctly, Stay there. Answer wrong,Step back 1 cell.
+3. **Climbing the Ladders (Pythonic Discoveries):** Landing on a ladder box presents a prompt challenge. If the user writes a great prompt that optimizes code, they climb up!
+4. **Getting Bitten by the Snakes (Python Runtime Errors):** Landing on a snake head triggers a critical coding error screen. The user must fix the error to avoid sliding down the snake's tail.
+
+### The Game Elements & Coding Vocabulary
+
+| Board Element | In-Game Trigger Name | What Happens? (The Gameplay Twist) | Learning Outcome |
+| :--- | :--- | :--- | :--- |
+|  Ladder 1 | `List Comprehension shortcut` | User learns how to write a 1-line loop instead of 4 lines. Short and fast! | **Climbs from Cell 14 to 48.** |
+|  Ladder 2 | `Mastering f-Strings` | User discovers clean string formatting instead of messy concatenations. | **Climbs from Cell 55 to 77.** |
+| Snake 1 | `IndentationError` | The user's code structure lacks proper spacing. The classic beginner trap! | **Bites and drops from Cell 32 to 10.** |
+| Snake 2| `TypeError` | Trying to add a String to an Integer (`"5" + 5`). The data types don't match. | **Bites and drops from Cell 64 to 36.** |
+| Snake 3 | `IndexError` | Trying to access the 5th item in a list that only has 3 items. | **Bites and drops from Cell 95 to 52.** |
+
+### Why this works perfectly without a Login Flow:
+* **Instant Session Play:** Since it's a 5-10 minute game loop, a user can finish a whole match in one sitting.
+* **Auto-Save Progress:** The current cell position, board state, and score are silently stored in the browser's `localStorage`. If the user accidentally refreshes, they resume exactly on the same cell with their dice ready!
+
+---
+
+*Feature Lead: Muskan Kumari(tulipcoder)*
+
+---
 
 
 
