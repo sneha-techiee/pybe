@@ -1,9 +1,13 @@
 # PyBe
 ## A Cognitive Learning System for Computational Thinking
-*VLED Lab, IIT Ropar*
-**MENTOR - Dr. Prakash Hegade**
 
----
+*VLED Lab, IIT Ropar*
+
+**Mentor:** Dr. Prakash Hegade
+
+### Contributors
+- **Product Vision & Research Architecture:** Sneha Rajpoot
+- **Feature Design & Gamification:** Muskan Kumari
 
 > Every learner already knows how to think computationally.
 > They make decisions. They repeat tasks. They group related things. They name patterns.
@@ -101,7 +105,7 @@ Together, contradiction detection and overgeneralization detection form a comple
 
 ---
 
-## What Pybe Builds
+## What PyBe Builds
 
 **Track 1 — The AI Mentor**
 Replaces the current rule-based, keyword-matching engine with a real LLM that reads what the learner actually wrote. Generates Python code derived from the learner's specific reasoning — not selected from templates. Every explanation is grounded in foundational Python literature through a RAG pipeline (ChromaDB). Every concept arrives with its origin story: the problem that made it necessary, not just the syntax that defines it.
@@ -146,15 +150,9 @@ Only after completing a stage does the learner realize: *"I have basically learn
 
 ---
 
+## Feature Extensions (Gamification & Engagement)
 
----
-## PyBe Features Specification
-
-Author: Muskan Kumari
-
-Date:july 2026
-
----
+The following features are proposed to improve learner engagement and long-term retention in PyBe.
 
 > ### Features and Ideation
 > The modules specified below—the **"What-If" Simulator**, **Interactive Easter Eggs** and **PySnakes & Ladders**— gamified, conceptualized and as a core retention mechanism to maximize user engagement and retention in the PyBe prototype.
@@ -232,15 +230,6 @@ The twist? The **ladders** are "Pythonic Discoveries" (writing clean code), and 
 * **Auto-Save Progress:** The current cell position, board state, and score are silently stored in the browser's `localStorage`. If the user accidentally refreshes, they resume exactly on the same cell with their dice ready!
 
 ---
-
-*Feature Lead: Muskan Kumari(tulipcoder)*
-
----
-
-
-
-
-
 ## Open Questions for Discussion
 
 Three genuine research questions this project will generate data to answer:
@@ -251,7 +240,7 @@ Three genuine research questions this project will generate data to answer:
 
 3. Does progression through structuredness space produce better transfer performance than difficulty-based progression — specifically on problems the learner has never seen?
 
-These are not aspirational. They are answerable with the data Pybe will generate.
+These are not aspirational. They are answerable with the data PyBe will generate.
 
 ---
 
