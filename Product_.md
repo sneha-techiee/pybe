@@ -146,6 +146,101 @@ Only after completing a stage does the learner realize: *"I have basically learn
 
 ---
 
+
+---
+## PyBe Features Specification
+
+Author: Muskan Kumari
+
+Date:july 2026
+
+---
+
+> ### Features and Ideation
+> The modules specified below—the **"What-If" Simulator**, **Interactive Easter Eggs** and **PySnakes & Ladders**— gamified, conceptualized and as a core retention mechanism to maximize user engagement and retention in the PyBe prototype.
+
+---
+
+##  1. Feature: "What-If" Scenario Simulator
+
+### What is it? (In Simple Words)
+Once a user writes a prompt and the system runs the Python code, we don't want them to just read the output and leave. The "What-If" feature gives the user a set of sliders, toggles, or quick buttons to tweak variables in that scenario instantly. 
+
+Without rewriting the prompt or waiting for the AI to generate new code, the user can see how changing one number or condition dramatically alters the Python output in real-time.
+
+### Real-World Example
+* **The Core Scenario:** A user prompts the AI to calculate the total salary of an employee after taxes. The AI generates the code and shows: `Take-home Salary: ₹80,000`.
+* **The "What-If" Panel:** Right below the console, a few interactive options pop up:
+  * *Slider:* "What if Inflation rises to 12%?"
+  * *Toggle:* "What if the employee gets a 20% performance bonus?"
+  * *Button:* "What if the Government introduces a new 30% luxury tax?"
+
+### How it works for the User:
+1. The user drags the **Performance Bonus** toggle to **ON**.
+2. Behind the scenes, the system updates the variable `bonus = 0.20` directly inside the already generated Python code.
+3. The code instantly re-runs inside the browser console, changing the output to: `Take-home Salary: ₹96,000`.
+4. **The Learning:** The user intuitively understands how dynamic variables and mathematical logic operate in Python without getting bogged down by syntax.
+
+---
+
+## 2. Feature: Context-Aware Interactive Easter Eggs
+
+### What is it? (In Simple Words)
+Since PyBe uses an open text box for prompts, users will naturally try to test its limits by typing funny, non-serious, or rebellious phrases. Instead of showing a boring "Error: Invalid Input" message, the system traps these specific words and replies with a hidden joke, a funny meme, or a cool UI animation. 
+
+This creates an "Aha!" moment, keeps the app highly engaging, and encourages users to share screenshots on social media (LinkedIn/X), making the prototype viral.
+
+### Curated Easter Egg Examples
+
+| What the User Types (The Prompt) | What Happens on the Screen (The Surprise) |
+| :--- | :--- |
+| **"hack nasa using python"** | A scary, matrix-style red dialog box flashes: `Accessing Satellite... Wifi Too Slow.` <br><br> *Terminal Message:* "NASA's firewall is too strong for your current browser. Go back and learn loops first before executing space espionage!" |
+| **"write my college assignment"** | A popular meme template pops up on the screen. <br><br> *Terminal Message:* "Nice try! PyBe is your AI coding mentor, not your underpaid freelance developer. Let's learn how to write this code yourself, step-by-step." |
+| **"make me a coffee"** | A small coffee mug animation appears. <br><br> *Terminal Message:* "Error 418: I am a teapot. Please check your kitchen cabinet for real caffeine fixes." |
+| **"is python better than java?"** | *Terminal Message:* "Obviously. Do you really want to write 5 lines of boiler-plate code just to print 'Hello World'? 🐍 > ☕" |
+
+### How it works under the hood:
+Before the user's text is sent to the AI engine, a tiny layer of code checks if the prompt matches any of these fun keywords. If it matches, it skips the AI generation entirely and instantly triggers the custom response or animation, keeping the system extremely fast and cost-free.
+
+---
+
+##  3. Feature: PySnakes & Ladders (Gamified Learning Board)
+
+### What is it? (In Simple Words)
+This feature turns Python learning into a classic 100-cell Board Game (Snake & Ladders). Instead of moving through boring text chapters, the user rolls a digital dice, moves across the board, and unlocks Python concepts. 
+
+The twist? The **ladders** are "Pythonic Discoveries" (writing clean code), and the **snakes** are notorious "Python Runtime Errors" that bite you and pull you down if you can't debug them!
+
+### The Gameplay Mechanics
+1. **Roll the Dice:** The user clicks a "Roll" button. A random number (1-6) moves their avatar forward on a beautiful HTML5/CSS grid board.
+2. **Landing on a Neutral Cell:** A pop-up asks a quick Python MCQ (Multiple Choice Question) based on their current level. Answer correctly, Stay there. Answer wrong,Step back 1 cell.
+3. **Climbing the Ladders (Pythonic Discoveries):** Landing on a ladder box presents a prompt challenge. If the user writes a great prompt that optimizes code, they climb up!
+4. **Getting Bitten by the Snakes (Python Runtime Errors):** Landing on a snake head triggers a critical coding error screen. The user must fix the error to avoid sliding down the snake's tail.
+
+### The Game Elements & Coding Vocabulary
+
+| Board Element | In-Game Trigger Name | What Happens? (The Gameplay Twist) | Learning Outcome |
+| :--- | :--- | :--- | :--- |
+|  Ladder 1 | `List Comprehension shortcut` | User learns how to write a 1-line loop instead of 4 lines. Short and fast! | **Climbs from Cell 14 to 48.** |
+|  Ladder 2 | `Mastering f-Strings` | User discovers clean string formatting instead of messy concatenations. | **Climbs from Cell 55 to 77.** |
+| Snake 1 | `IndentationError` | The user's code structure lacks proper spacing. The classic beginner trap! | **Bites and drops from Cell 32 to 10.** |
+| Snake 2| `TypeError` | Trying to add a String to an Integer (`"5" + 5`). The data types don't match. | **Bites and drops from Cell 64 to 36.** |
+| Snake 3 | `IndexError` | Trying to access the 5th item in a list that only has 3 items. | **Bites and drops from Cell 95 to 52.** |
+
+### Why this works perfectly without a Login Flow:
+* **Instant Session Play:** Since it's a 5-10 minute game loop, a user can finish a whole match in one sitting.
+* **Auto-Save Progress:** The current cell position, board state, and score are silently stored in the browser's `localStorage`. If the user accidentally refreshes, they resume exactly on the same cell with their dice ready!
+
+---
+
+*Feature Lead: Muskan Kumari(tulipcoder)*
+
+---
+
+
+
+
+
 ## Open Questions for Discussion
 
 Three genuine research questions this project will generate data to answer:
