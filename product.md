@@ -596,8 +596,65 @@ Shows the learner's trajectory through structuredness space — not through leve
 - `API.md` — all endpoints, request/response schemas
 - `BELIEF_ENGINE.md` — belief extraction, contradiction detection specification
 - `STRUCTUREDNESS.md` — scoring formula, calibration methodology, validation approach
-- Inline documentation on every non-trivial function
+- Inline documentation on every non-trivial function 
+### Additional Frontend UI/UX Ideas
 
+These ideas focus on making PyBe more interactive, visually engaging, and suitable for learners of different ages and skill levels.
+
+#### Interactive Learning Journey
+- Display the learner's progress as a visual journey instead of a traditional progress bar.
+- Unlock new milestones through completed reasoning tasks.
+- Highlight upcoming concepts and completed achievements.
+
+#### AI Mentor Chat Panel
+- Persistent chat interface with conversation history.
+- Suggested follow-up questions based on learner responses.
+- Quick explanation buttons for concepts, examples, and hints.
+
+#### Personalized Home Dashboard
+- Welcome message based on learner progress.
+- Resume last learning session.
+- Daily learning goals and recommended scenarios.
+
+#### Concept Relationship Map
+- Interactive graph connecting Python concepts.
+- Selecting a concept highlights related concepts and prerequisite knowledge.
+- Visual learning path between beginner and advanced topics.
+
+#### Interactive Code Playground
+- Built-in Python editor for testing generated code.
+- Run, reset, and compare code versions.
+- Highlight syntax and explain errors in simple language.
+
+#### Achievement and Motivation System
+- Earn badges for completing milestones.
+- Display learning streaks and consistency rewards.
+- Celebrate concept mastery with simple animations.
+
+#### Accessibility Features
+- Light mode and dark mode.
+- Adjustable font size.
+- High-contrast mode.
+- Keyboard-friendly navigation.
+- Color-blind friendly visualization.
+
+#### Responsive Mobile Experience
+- Optimized layouts for desktop, tablet, and mobile.
+- Touch-friendly controls.
+- Smooth transitions and animations across devices.
+
+#### Session Summary Card
+After every completed session, display:
+- Concepts learned
+- Mistakes identified
+- AI mentor suggestions
+- Next recommended scenario
+- Estimated mastery improvement
+
+#### Interactive Onboarding
+- Short guided tour for first-time users.
+- Explain the learning workflow step by step.
+- Allow users to skip or revisit the tutorial anytime.
 ---
 
 ## 11. Team Structure
